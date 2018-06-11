@@ -48,7 +48,25 @@
 								<input type="password" class="form-control" name="password_confirmation">
 							</div>
 						</div>
+						
+						<div class="form-group">
+                            <label for="captcha" class="col-md-4 control-label">Captcha</label>
 
+                            <div class="col-md-3">
+                                <input id="captcha" type="text" class="form-control" name="captcha" required>
+
+                                @if ($errors->has('captcha'))
+                                    <span class="help-block" style="color:#a94442;">
+                                        <strong>{{ $errors->first('captcha') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="col-md-3">
+                                <a href="">{!! captcha_img() !!}</a>
+                            </div>
+                        </div>
+						
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
@@ -56,6 +74,8 @@
 								</button>
 							</div>
 						</div>
+						
+
 					</form>
 				</div>
 			</div>
